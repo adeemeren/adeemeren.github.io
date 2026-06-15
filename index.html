@@ -3,11 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Çiğdem Akcan | Portfolio</title>
+  <title>Adem Eren | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Çiğdem Akcan</h1>
-  <p>Junior Backend Developer</p>
-  <p>Portfolio sitem hazırlanıyor.</p>
+  <header class="navbar">
+    <div class="logo">Adem Eren</div>
+    <nav>
+      <a href="#about">Hakkımda</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#projects">Projeler</a>
+      <a href="#experience">Deneyim</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="tag">Junior Backend Developer</p>
+        <h1>Merhaba, ben <span>Adem Eren</span>.</h1>
+        <p class="description">
+          Java, Spring Boot, REST API geliştirme ve SQL veritabanları üzerine
+          çalışan bir bilgisayar mühendisiyim. Kurumsal yazılım geliştirme
+          süreçleri, backend mimarisi ve gerçek proje deneyimleriyle kendimi
+          geliştirmeye devam ediyorum.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn primary">Projelerimi Gör</a>
+          <a href="#contact" class="btn secondary">İletişime Geç</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>Hakkımda</h2>
+      <p>
+        Bilgisayar mühendisliği alanında eğitim aldım ve özellikle backend
+        geliştirme tarafına odaklanıyorum. Java Spring Boot, REST API,
+        veritabanı işlemleri, authentication, testing ve yazılım yaşam döngüsü
+        konularında çalışmalar yapıyorum.
+      </p>
+      <p>
+        Staj sürecimde Java Spring Boot, Angular, Oracle, Azure DevOps ve test
+        süreçleriyle gerçek kurumsal projelerde görev aldım. Amacım temiz kod
+        yazan, öğrenmeye açık ve üretime katkı sağlayan bir backend developer
+        olarak ilerlemek.
+      </p>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Yetenekler</h2>
+      <div class="skills-grid">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>REST API</span>
+        <span>Spring Security</span>
+        <span>JWT</span>
+        <span>SQL</span>
+        <span>PostgreSQL</span>
+        <span>Oracle</span>
+        <span>Docker</span>
+        <span>Git</span>
+        <span>GitHub</span>
+        <span>Azure DevOps</span>
+        <span>Postman</span>
+        <span>JUnit</span>
+        <span>Mockito</span>
+        <span>Angular</span>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projeler</h2>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>CodeReviewAI</h3>
+          <p>
+            Java Spring Boot ile geliştirilen, kod parçalarını yapay zeka
+            desteğiyle analiz eden backend odaklı bir uygulama.
+          </p>
+          <div class="tech">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>PostgreSQL</span>
+            <span>JWT</span>
+            <span>Docker</span>
+          </div>
+          <a href="https://github.com/adeemeren" target="_blank">GitHub’da Gör</a>
+        </article>
+
+        <article class="project-card">
+          <h3>ID Mail Platform</h3>
+          <p>
+            Staj sürecinde üzerinde çalışılan kurumsal mail yönetim uygulaması.
+            Webix’ten Angular’a dönüşüm, ekran geliştirme ve backend servis
+            düzenlemeleri üzerine katkılar sağlandı.
+          </p>
+          <div class="tech">
+            <span>Spring Boot</span>
+            <span>Angular</span>
+            <span>Oracle</span>
+            <span>REST API</span>
+          </div>
+          <a href="#contact">Detay için iletişime geç</a>
+        </article>
+
+        <article class="project-card">
+          <h3>HRWIE / HRWEB</h3>
+          <p>
+            İnsan kaynakları ve işe alım süreçlerine yönelik kurumsal uygulama.
+            Bug fixing, API inceleme, test süreçleri ve Azure DevOps üzerinde
+            iş takibi deneyimi kazanıldı.
+          </p>
+          <div class="tech">
+            <span>Java</span>
+            <span>Spring Boot</span>
+            <span>SQL Server</span>
+            <span>Azure DevOps</span>
+          </div>
+          <a href="#contact">Detay için iletişime geç</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Deneyim</h2>
+
+      <div class="experience-card">
+        <h3>Software Engineering Intern</h3>
+        <p class="company">Kurumsal Yazılım Geliştirme Stajı</p>
+        <p>
+          Java Spring Boot, Angular ve Oracle teknolojileriyle geliştirilen
+          kurumsal projelerde görev aldım. Frontend-backend entegrasyonu,
+          REST API süreçleri, test, bug fixing, dokümantasyon ve Azure DevOps
+          iş akışları üzerinde deneyim kazandım.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <h2>İletişim</h2>
+      <p>
+        Benimle iletişime geçmek veya projelerimi incelemek için aşağıdaki
+        bağlantıları kullanabilirsiniz.
+      </p>
+
+      <div class="contact-links">
+        <a href="mailto:mailadresin@gmail.com">E-posta</a>
+        <a href="https://github.com/adeemeren" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/linkedin-kullanici-adin" target="_blank">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Adem Eren. Tüm hakları saklıdır.</p>
+  </footer>
 </body>
 </html>
