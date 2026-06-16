@@ -359,9 +359,107 @@ a {
 
 /* PROJECTS */
 
+.featured-project {
+  background: linear-gradient(
+    145deg,
+    var(--card-color),
+    rgba(56, 189, 248, 0.08)
+  );
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 36px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px var(--shadow-color);
+}
+
+.featured-project::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: var(--primary-color);
+  opacity: 0.08;
+  border-radius: 50%;
+  top: -110px;
+  right: -100px;
+}
+
+.featured-project::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: var(--primary-color);
+  opacity: 0.05;
+  border-radius: 50%;
+  bottom: -70px;
+  left: -70px;
+}
+
+.featured-project-content {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+}
+
+.project-label {
+  display: inline-flex;
+  color: var(--tag-text) !important;
+  background: var(--tag-bg);
+  border: 1px solid var(--border-color);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 18px !important;
+}
+
+.featured-project h3 {
+  color: var(--section-title-color);
+  font-size: 30px;
+  margin-bottom: 14px;
+}
+
+.featured-project p {
+  max-width: 960px;
+}
+
+.project-contributions {
+  list-style: none;
+  margin: 24px 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.project-contributions li {
+  color: var(--muted-text-color);
+  background: rgba(56, 189, 248, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 12px 14px 12px 38px;
+  position: relative;
+  font-size: 15px;
+}
+
+.project-contributions li::before {
+  content: "✓";
+  position: absolute;
+  left: 15px;
+  top: 11px;
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+.secondary-projects {
+  margin-top: 26px;
+}
+
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
 
@@ -369,7 +467,7 @@ a {
 .experience-card {
   background: var(--card-color);
   border: 1px solid var(--border-color);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 24px;
   transition: 0.3s;
 }
@@ -396,7 +494,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 18px 0 0;
+  margin: 20px 0 0;
 }
 
 .tech span {
@@ -405,7 +503,7 @@ a {
   background: var(--tag-bg);
   padding: 6px 10px;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .project-card a {
@@ -476,84 +574,17 @@ footer {
   color: var(--primary-color);
 }
 
-.featured-project {
-  background: linear-gradient(
-    145deg,
-    var(--card-color),
-    rgba(56, 189, 248, 0.07)
-  );
-  border: 1px solid var(--border-color);
-  border-radius: 22px;
-  padding: 32px;
-  margin-bottom: 24px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 60px var(--shadow-color);
-}
-
-.featured-project::before {
-  content: "";
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  background: var(--primary-color);
-  opacity: 0.08;
-  border-radius: 50%;
-  top: -90px;
-  right: -80px;
-}
-
-.featured-project-content {
-  position: relative;
-  z-index: 1;
-  max-width: 980px;
-}
-
-.project-label {
-  display: inline-flex;
-  color: var(--tag-text) !important;
-  background: var(--tag-bg);
-  border: 1px solid var(--border-color);
-  padding: 7px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 800;
-  margin-bottom: 16px !important;
-}
-
-.featured-project h3 {
-  color: var(--section-title-color);
-  font-size: 28px;
-  margin-bottom: 14px;
-}
-
-.project-contributions {
-  list-style: none;
-  margin: 22px 0;
-  display: grid;
-  gap: 10px;
-}
-
-.project-contributions li {
-  color: var(--muted-text-color);
-  position: relative;
-  padding-left: 28px;
-}
-
-.project-contributions li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: var(--primary-color);
-  font-weight: 900;
-}
-
-.secondary-projects {
-  margin-top: 22px;
-}
-
 /* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-contributions {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 1000px) {
   .hero-content {
@@ -608,7 +639,11 @@ footer {
     font-size: 16px;
   }
 
-  .hero-card {
+  .hero-card,
+  .featured-project,
+  .project-card,
+  .experience-card,
+  .skill-category-card {
     padding: 24px;
   }
 
