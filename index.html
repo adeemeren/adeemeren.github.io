@@ -227,8 +227,15 @@
     <section id="projects" class="section">
       <h2 data-tr="Projeler" data-en="Projects">Projeler</h2>
 
-      <div class="project-grid">
-        <article class="project-card">
+      <article class="featured-project">
+        <div class="featured-project-content">
+          <p
+            class="project-label"
+            data-tr="Öne Çıkan Proje"
+            data-en="Featured Project">
+            Öne Çıkan Proje
+          </p>
+
           <h3
             data-tr="ID Mail Yönetim Uygulaması"
             data-en="ID Mail Management Application">
@@ -243,13 +250,31 @@
             mail tanımlama ve mail alıcı yönetimi modülleri üzerinde çalıştım.
           </p>
 
-          <p
-            data-tr="Listeleme, filtreleme, güncelleme, silme işlemleri, Angular tabanlı mail alıcı görüntüleme ekranı, backend servis akışları ve personel bazlı mail alıcı sorgulama süreçlerine katkı sağladım."
-            data-en="I contributed to listing, filtering, updating, deleting operations, an Angular-based mail recipient display screen, backend service flows, and personnel-based mail recipient query processes.">
-            Listeleme, filtreleme, güncelleme, silme işlemleri, Angular tabanlı
-            mail alıcı görüntüleme ekranı, backend servis akışları ve personel
-            bazlı mail alıcı sorgulama süreçlerine katkı sağladım.
-          </p>
+          <ul class="project-contributions">
+            <li
+              data-tr="Mail tanımlama ve mail alıcı yönetimi modüllerine katkı sağladım."
+              data-en="Contributed to mail definition and mail recipient management modules.">
+              Mail tanımlama ve mail alıcı yönetimi modüllerine katkı sağladım.
+            </li>
+
+            <li
+              data-tr="Angular tabanlı mail alıcı görüntüleme ekranı üzerinde çalıştım."
+              data-en="Worked on an Angular-based mail recipient display screen.">
+              Angular tabanlı mail alıcı görüntüleme ekranı üzerinde çalıştım.
+            </li>
+
+            <li
+              data-tr="Listeleme, filtreleme, güncelleme ve silme işlemlerinin geliştirilmesine destek oldum."
+              data-en="Supported the development of listing, filtering, updating, and deleting operations.">
+              Listeleme, filtreleme, güncelleme ve silme işlemlerinin geliştirilmesine destek oldum.
+            </li>
+
+            <li
+              data-tr="Frontend aksiyonlarının backend REST API süreçleriyle entegre edilmesine katkı sağladım."
+              data-en="Contributed to integrating frontend actions with backend REST API processes.">
+              Frontend aksiyonlarının backend REST API süreçleriyle entegre edilmesine katkı sağladım.
+            </li>
+          </ul>
 
           <div class="tech">
             <span>Java</span>
@@ -257,9 +282,12 @@
             <span>Angular</span>
             <span>Oracle</span>
             <span>REST API</span>
+            <span>Postman</span>
           </div>
-        </article>
+        </div>
+      </article>
 
+      <div class="project-grid secondary-projects">
         <article class="project-card">
           <h3
             data-tr="Öğrenci Bilgi Sistemi"
