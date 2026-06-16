@@ -67,6 +67,10 @@ a {
   backdrop-filter: blur(12px);
 }
 
+.navbar nav a.active {
+  color: var(--primary-color);
+}
+
 .logo {
   font-size: 22px;
   font-weight: 700;
@@ -88,10 +92,28 @@ a {
   color: var(--muted-text-color);
   font-size: 15px;
   transition: 0.3s;
+  position: relative;
 }
 
-.navbar nav a:hover {
+.navbar nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.navbar nav a.active {
   color: var(--primary-color);
+}
+
+.navbar nav a:hover::after,
+.navbar nav a.active::after {
+  width: 100%;
 }
 
 /* HERO */
