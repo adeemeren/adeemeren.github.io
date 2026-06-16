@@ -22,3 +22,31 @@ themeToggle.addEventListener("click", () => {
     themeToggle.textContent = "🌙";
   }
 });
+const languageToggle = document.getElementById("language-toggle");
+const translatableElements = document.querySelectorAll("[data-tr][data-en]");
+
+const savedLanguage = localStorage.getItem("language") || "tr";
+
+function setLanguage(language) {
+  translatableElements.forEach((element) => {
+    const translatedText = element.getAttribute(`data-${language}`);
+
+    if (translatedText) {
+      element.innerHTML = translatedText;
+    }
+  });
+
+  document.documentElement.lang = language;
+  localStorage.setItem("language", language);
+
+  languageToggle.textContent = language === "tr" ? "TR / EN" : "EN / TR";
+}
+
+setLanguage(savedLanguage);
+
+languageToggle.addEventListener("click", () => {
+  const currentLanguage = localStorage.getItem("language") || "tr";
+  const newLanguage = currentLanguage === "tr" ? "en" : "tr";
+
+  setLanguage(newLanguage);
+});

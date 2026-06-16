@@ -70,6 +70,7 @@ a {
 
 .navbar nav {
   display: flex;
+  align-items: center;
   gap: 24px;
 }
 
@@ -275,6 +276,23 @@ footer {
 }
 
 .theme-toggle:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.language-toggle {
+  background: var(--card-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.language-toggle:hover {
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
