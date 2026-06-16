@@ -71,6 +71,11 @@ a {
   font-size: 22px;
   font-weight: 700;
   color: var(--section-title-color);
+  transition: 0.3s;
+}
+
+.logo:hover {
+  color: var(--primary-color);
 }
 
 .navbar nav {
