@@ -53,19 +53,19 @@ languageToggle.addEventListener("click", () => {
 
 const revealElements = document.querySelectorAll(".reveal");
 
-function revealOnScroll() {
-  revealElements.forEach((element) => {
-    const elementTop = element.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+);
 
-    if (elementTop < windowHeight - 100) {
-      element.classList.add("active");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+revealElements.forEach((element) => revealObserver.observe(element));
 
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".navbar nav a[href^='#']");
@@ -96,3 +96,37 @@ function setActiveNavLink() {
 
 window.addEventListener("scroll", setActiveNavLink);
 window.addEventListener("load", setActiveNavLink);
+/* scroll progress bar */
+const scrollProgress = document.getElementById("scroll-progress");
+
+if (scrollProgress) {
+  const updateProgress = () => {
+    const scrollTop = window.scrollY;
+    const docHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = pct + "%";
+  };
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+  updateProgress();
+}
+
+/* subtle hero parallax on the ambient node layer */
+const heroBg = document.querySelector(".hero-bg svg");
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+if (heroBg && !prefersReducedMotion) {
+  window.addEventListener(
+    "scroll",
+    () => {
+      const offset = window.scrollY;
+      if (offset < 900) {
+        heroBg.style.transform = `translateY(${offset * 0.12}px)`;
+      }
+    },
+    { passive: true }
+  );
+}
